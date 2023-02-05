@@ -92,7 +92,11 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: ticketList
-                  .map((ticket) => TicketView(tickets: ticket))
+                  .map(
+                    (ticket) => TicketView(
+                      tickets: ticket,
+                    ),
+                  )
                   .toList(),
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/widgets/icon_text_widget.dart';
+import 'package:ticket_booking_app/widgets/ticket_tabs.dart';
 import '../utils/app_styles.dart';
 import '../widgets/double_text_widget.dart';
 
@@ -26,53 +27,8 @@ class SeachScreen extends StatelessWidget {
                 .copyWith(fontSize: AppLayout.getWidth(35)),
           ),
           Gap(AppLayout.getHeight(20)),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              child: Row(
-                children: [
-                  // aireline tickets
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(AppLayout.getHeight(50)),
-                      ),
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                      children: [
-                        Text("Aireline tickets"),
-                      ],
-                    ),
-                  ),
-                  // hotels
-                  Container(
-                    width: size.width * .44,
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(AppLayout.getHeight(50)),
-                      ),
-                      color: Colors.transparent,
-                    ),
-                    child: Column(
-                      children: [
-                        Text("Hotels"),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
-                color: const Color(0xFFF4F6FD),
-              ),
-            ),
-          ),
+          const AppTicketTabs(
+              firstTab: "Aireline tickets", secondTab: "Hotels"),
           Gap(AppLayout.getHeight(25)),
           const AppIconText(
             icon: Icons.flight_takeoff_rounded,
@@ -151,7 +107,7 @@ class SeachScreen extends StatelessWidget {
                     ),
                     Gap(AppLayout.getHeight(14)),
                     Text(
-                      "20% discount on the early booking of this flight. Don't miss out this chance !",
+                      "20% discount on the early booking of this flight. Don't miss !",
                       style: Styles.headLineStyle2,
                     ),
                   ],
@@ -245,15 +201,15 @@ class SeachScreen extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text: '😍',
-                                style: TextStyle(fontSize: 35),
+                                style: TextStyle(fontSize: 30),
                               ),
                               TextSpan(
-                                text: '🥰',
-                                style: TextStyle(fontSize: 50),
+                                text: '🤩',
+                                style: TextStyle(fontSize: 42),
                               ),
                               TextSpan(
                                 text: '😘',
-                                style: TextStyle(fontSize: 35),
+                                style: TextStyle(fontSize: 30),
                               ),
                             ],
                           ),
