@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/utils/app_styles.dart';
+import 'package:ticket_booking_app/widgets/layout_builder_widget.dart';
 import 'package:ticket_booking_app/widgets/thick_container.dart';
 
 class TicketView extends StatelessWidget {
@@ -166,32 +167,12 @@ class TicketView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: LayoutBuilder(
-                        builder:
-                            (BuildContext context, BoxConstraints constraints) {
-                          return Flex(
-                            direction: Axis.horizontal,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            mainAxisSize: MainAxisSize.max,
-                            children: List.generate(
-                              (constraints.constrainWidth() / 15).floor(),
-                              (index) => SizedBox(
-                                width: 5,
-                                height: 1,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    color: isColor == null
-                                        ? Colors.white
-                                        : Colors.grey.shade300,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
+                      padding: EdgeInsets.all(12.0),
+                      child: AppLayoutBuilderWidget(
+                        sections: 16,
+                        isColor: true,
                       ),
                     ),
                   ),
